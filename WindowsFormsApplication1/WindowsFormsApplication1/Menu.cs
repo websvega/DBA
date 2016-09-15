@@ -44,16 +44,5 @@ namespace WindowsFormsApplication1
         {
             MessageBox.Show("hola");
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            Beneficiarios newMDIChild = new Beneficiarios();
-            // Set the Parent Form of the Child window.
-            newMDIChild.MdiParent = this;
-            // Display the new form.
-            newMDIChild.Show();
-        
-        }
     }
 }
