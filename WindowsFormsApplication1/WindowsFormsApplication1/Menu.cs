@@ -33,5 +33,20 @@ namespace WindowsFormsApplication1
             Graphics g = e.Graphics;
             g.DrawImage(logoMarillac, new Point((this.Width / 2) - 190, 10));
         }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            button1.Image = global::WindowsFormsApplication1.Properties.Resources.beneficiarios1;
+        }
+
+        private void button1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            button1.Image = global::WindowsFormsApplication1.Properties.Resources.beneficiarios2;
+        }
+
+        private void button1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            button1.Image = global::WindowsFormsApplication1.Properties.Resources.beneficiarios1;
+        }
     }
 }
