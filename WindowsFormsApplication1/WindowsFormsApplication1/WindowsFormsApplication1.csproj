@@ -52,10 +52,55 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario Hijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Hijo.Designer.cs">
+      <DependentUpon>Formulario Hijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Actividades.Designer.cs">
+      <DependentUpon>Form_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Psicologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Psicologo.Designer.cs">
+      <DependentUpon>Form_Psicologo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Beneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Beneficiario.Designer.cs">
+      <DependentUpon>F_Beneficiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Profesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Profesor.Designer.cs">
+      <DependentUpon>F_Profesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Hijo.resx">
+      <DependentUpon>Formulario Hijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Actividades.resx">
+      <DependentUpon>Form_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Psicologo.resx">
+      <DependentUpon>Form_Psicologo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Beneficiario.resx">
+      <DependentUpon>F_Beneficiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Profesor.resx">
+      <DependentUpon>F_Profesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logoMarillac.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
