@@ -16,5 +16,13 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+<<<<<<< HEAD:WindowsFormsApplication1/WindowsFormsApplication1/Beneficiarios.cs
+=======
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hola");
+        }
+>>>>>>> parent of 01071f2... Empezar a trabajar:WindowsFormsApplication1/WindowsFormsApplication1/Form1.cs
     }
 }
