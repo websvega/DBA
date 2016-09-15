@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
         {
             cargarImagenes();
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void cargarImagenes()
@@ -32,6 +33,27 @@ namespace WindowsFormsApplication1
         {
             Graphics g = e.Graphics;
             g.DrawImage(logoMarillac, new Point((this.Width / 2) - 190, 10));
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hola");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Beneficiarios newMDIChild = new Beneficiarios();
+            // Set the Parent Form of the Child window.
+            newMDIChild.MdiParent = this;
+            // Display the new form.
+            newMDIChild.Show();
+        
         }
     }
 }
