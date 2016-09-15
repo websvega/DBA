@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Profesores : Form
+    public partial class Form1 : Form
     {
-        public Profesores()
+        public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hola hola hola hola");
         }
     }
 }
