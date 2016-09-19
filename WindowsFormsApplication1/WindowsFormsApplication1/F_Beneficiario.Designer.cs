@@ -48,11 +48,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.beneficiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marillacDataSet = new WindowsFormsApplication1.MarillacDataSet();
-            this.beneficiarioTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.BeneficiarioTableAdapter();
-            this.psicologo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.idBeneficiarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +59,11 @@
             this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beneficiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marillacDataSet = new WindowsFormsApplication1.MarillacDataSet();
+            this.beneficiarioTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.BeneficiarioTableAdapter();
+            this.psicologo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.botonModificar = new System.Windows.Forms.Button();
             this.botonAgregar = new System.Windows.Forms.Button();
             this.botonEliminar = new System.Windows.Forms.Button();
@@ -278,41 +278,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(728, 454);
             this.dataGridView1.TabIndex = 10;
             // 
-            // beneficiarioBindingSource
-            // 
-            this.beneficiarioBindingSource.DataMember = "Beneficiario";
-            this.beneficiarioBindingSource.DataSource = this.marillacDataSet;
-            // 
-            // marillacDataSet
-            // 
-            this.marillacDataSet.DataSetName = "MarillacDataSet";
-            this.marillacDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // beneficiarioTableAdapter
-            // 
-            this.beneficiarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // psicologo
-            // 
-            this.psicologo.Font = new System.Drawing.Font("Calibri", 14F);
-            this.psicologo.Location = new System.Drawing.Point(191, 214);
-            this.psicologo.Margin = new System.Windows.Forms.Padding(2);
-            this.psicologo.Name = "psicologo";
-            this.psicologo.ReadOnly = true;
-            this.psicologo.Size = new System.Drawing.Size(266, 30);
-            this.psicologo.TabIndex = 11;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14F);
-            this.label10.Location = new System.Drawing.Point(14, 214);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 23);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Psicólogo/a";
-            // 
             // idBeneficiarioDataGridViewTextBoxColumn
             // 
             this.idBeneficiarioDataGridViewTextBoxColumn.DataPropertyName = "idBeneficiario";
@@ -401,6 +366,41 @@
             this.edadDataGridViewTextBoxColumn.ReadOnly = true;
             this.edadDataGridViewTextBoxColumn.Width = 50;
             // 
+            // beneficiarioBindingSource
+            // 
+            this.beneficiarioBindingSource.DataMember = "Beneficiario";
+            this.beneficiarioBindingSource.DataSource = this.marillacDataSet;
+            // 
+            // marillacDataSet
+            // 
+            this.marillacDataSet.DataSetName = "MarillacDataSet";
+            this.marillacDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // beneficiarioTableAdapter
+            // 
+            this.beneficiarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // psicologo
+            // 
+            this.psicologo.Font = new System.Drawing.Font("Calibri", 14F);
+            this.psicologo.Location = new System.Drawing.Point(191, 214);
+            this.psicologo.Margin = new System.Windows.Forms.Padding(2);
+            this.psicologo.Name = "psicologo";
+            this.psicologo.ReadOnly = true;
+            this.psicologo.Size = new System.Drawing.Size(266, 30);
+            this.psicologo.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 14F);
+            this.label10.Location = new System.Drawing.Point(14, 214);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 23);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Psicólogo/a";
+            // 
             // botonModificar
             // 
             this.botonModificar.Location = new System.Drawing.Point(129, 462);
@@ -436,6 +436,7 @@
             this.botonSalir.TabIndex = 18;
             this.botonSalir.Text = "Salir";
             this.botonSalir.UseVisualStyleBackColor = true;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click);
             // 
             // botonActividades
             // 
@@ -479,6 +480,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.botonSalir;
             this.ClientSize = new System.Drawing.Size(1221, 567);
             this.Controls.Add(this.botonHijos);
             this.Controls.Add(this.botonPsicologo);
@@ -509,7 +511,7 @@
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "F_Beneficiario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

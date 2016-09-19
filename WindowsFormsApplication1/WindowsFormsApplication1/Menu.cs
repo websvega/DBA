@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
+    //Cadena de conexión de mauricio valdes connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
 
     public partial class Menu : Form
     {
@@ -21,9 +22,7 @@ namespace WindowsFormsApplication1
 
         public Menu()
         {
-            InitializeComponent();
-            
-
+            InitializeComponent(); 
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)
