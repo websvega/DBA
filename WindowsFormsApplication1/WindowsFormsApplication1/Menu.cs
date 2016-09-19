@@ -10,7 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    //Cadena de conexión de mauricio valdes connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
+    /**
+     * VALDES
+     * Cadena de conexión de mauricio valdes 
+       connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
+     *Yeyo
+      connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
+        */
 
     public partial class Menu : Form
     {
