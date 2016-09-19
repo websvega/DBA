@@ -12,7 +12,6 @@ namespace WindowsFormsApplication1
 {
     /**
      * VALDES
-     * Cadena de conexión de mauricio valdes 
        connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
      *Yeyo
       connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
