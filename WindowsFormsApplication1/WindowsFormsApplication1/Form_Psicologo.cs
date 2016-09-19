@@ -27,5 +27,11 @@ namespace WindowsFormsApplication1
         {
             this.main_Form.Show();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
