@@ -12,9 +12,9 @@ namespace WindowsFormsApplication1
 {
     public partial class Form_Actividades : Form
     {
-        Form1 main_Form; 
+        Menu main_Form; 
 
-        public Form_Actividades(Form1 m_Form)
+        public Form_Actividades(Menu m_Form)
         {
             InitializeComponent();
             this.main_Form = m_Form;

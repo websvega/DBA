@@ -23,5 +23,12 @@ namespace WindowsFormsApplication1
         {
             this.main_Form.Show();
         }
+
+        private void F_Beneficiario_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'marillacDataSet.Beneficiario' Puede moverla o quitarla según sea necesario.
+            this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+
+        }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace WindowsFormsApplication1
 {
 
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
         F_Beneficiario form_Benificiario;
         F_Profesor form_Profesor;
@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
         Form_Actividades form_Actividades;
         Form_Psicologo form_Psicologo;
 
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
             

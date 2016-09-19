@@ -15,9 +15,9 @@ namespace WindowsFormsApplication1
         /// <summary>
         /// Forma Padre
         /// </summary>
-        Form1 main_Form;
+        Menu main_Form;
 
-        public Form_Psicologo(Form1 m_Form)
+        public Form_Psicologo(Menu m_Form)
         {
             InitializeComponent();
             this.main_Form = m_Form;
