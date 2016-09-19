@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
     public partial class F_Profesor : Form
     {
         Form main_Form;
-        public F_Profesor(Form1 m_form)
+        public F_Profesor(Menu m_form)
         {
             InitializeComponent();
             this.main_Form = m_form;

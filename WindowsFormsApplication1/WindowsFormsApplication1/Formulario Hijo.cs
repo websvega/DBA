@@ -12,9 +12,9 @@ namespace WindowsFormsApplication1
 {
     public partial class Formulario_Hijo : Form
     {
-        Form1 main_Form; 
+        Menu main_Form; 
 
-        public Formulario_Hijo(Form1 m_form)
+        public Formulario_Hijo(Menu m_form)
         {
             InitializeComponent();
             this.main_Form = m_form;
