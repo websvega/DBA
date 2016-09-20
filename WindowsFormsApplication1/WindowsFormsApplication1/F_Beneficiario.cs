@@ -28,6 +28,8 @@ namespace WindowsFormsApplication1
             connectionString = @"Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
             con.ConnectionString = connectionString;
             adapter = new SqlDataAdapter();
+
+            dateTimePicker1.CustomFormat = "dd-MMMM-yyyy";
         }
 
         private void form_is_Closing(object sender, FormClosingEventArgs e)
@@ -37,6 +39,8 @@ namespace WindowsFormsApplication1
 
         private void F_Beneficiario_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'marillacDataSet.CuotaHijo' Puede moverla o quitarla según sea necesario.
+            this.cuotaHijoTableAdapter.Fill(this.marillacDataSet.CuotaHijo);
             // TODO: esta línea de código carga datos en la tabla 'marillacDataSet.Beneficiario' Puede moverla o quitarla según sea necesario.
             this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
         }
@@ -102,6 +106,50 @@ namespace WindowsFormsApplication1
                 {
                     con.Close();
                     MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                nombre.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value);
+                paterno.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value);
+                materno.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value);
+                direccion.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value);
+                colonia.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value);
+                telefono.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value);
+                sexo.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value);
+                dateTimePicker1.Value = DateTime.Parse(Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value));
+            }
+            catch { }
+        }
+
+        private void botonModificar_Click(object sender, EventArgs e)
+        {
+            Int64 idModificar;
+
+            if(dataGridView1.SelectedRows.Count!=0)
+            {
+                idModificar = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+
+                try
+                {
+                    con.Open();
+                    string query = "UPDATE Persona.Beneficiario SET nombre='"+nombre.Text+"', paterno='"+paterno.Text+"', materno='"+materno.Text+"', direccion='"+direccion.Text+"', colonia='"+colonia.Text+"', telefono="+telefono.Text+", sexo='"+sexo.Text+ "', fechaNacimiento='" + dateTimePicker1.Value.Day + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Year + "' WHERE idBeneficiario=" + idModificar;
+                    adapter.InsertCommand=new SqlCommand(query,con);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    con.Close();
+
+                    this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+                    limpiarTextBox();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                    con.Close();
                 }
             }
         }
