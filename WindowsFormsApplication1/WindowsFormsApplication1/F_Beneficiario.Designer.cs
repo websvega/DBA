@@ -43,7 +43,7 @@
             this.paterno = new System.Windows.Forms.TextBox();
             this.direccion = new System.Windows.Forms.TextBox();
             this.colonia = new System.Windows.Forms.TextBox();
-            this.Teléfono = new System.Windows.Forms.TextBox();
+            this.telefono = new System.Windows.Forms.TextBox();
             this.sexo = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -211,14 +211,14 @@
             this.colonia.Size = new System.Drawing.Size(266, 30);
             this.colonia.TabIndex = 5;
             // 
-            // Teléfono
+            // telefono
             // 
-            this.Teléfono.Font = new System.Drawing.Font("Calibri", 14F);
-            this.Teléfono.Location = new System.Drawing.Point(191, 352);
-            this.Teléfono.Margin = new System.Windows.Forms.Padding(2);
-            this.Teléfono.Name = "Teléfono";
-            this.Teléfono.Size = new System.Drawing.Size(266, 30);
-            this.Teléfono.TabIndex = 6;
+            this.telefono.Font = new System.Drawing.Font("Calibri", 14F);
+            this.telefono.Location = new System.Drawing.Point(191, 352);
+            this.telefono.Margin = new System.Windows.Forms.Padding(2);
+            this.telefono.Name = "telefono";
+            this.telefono.Size = new System.Drawing.Size(266, 30);
+            this.telefono.TabIndex = 6;
             // 
             // sexo
             // 
@@ -418,6 +418,7 @@
             this.botonAgregar.TabIndex = 16;
             this.botonAgregar.Text = "Agregar";
             this.botonAgregar.UseVisualStyleBackColor = true;
+            this.botonAgregar.Click += new System.EventHandler(this.botonAgregar_Click);
             // 
             // botonEliminar
             // 
@@ -427,9 +428,11 @@
             this.botonEliminar.TabIndex = 17;
             this.botonEliminar.Text = "Eliminar";
             this.botonEliminar.UseVisualStyleBackColor = true;
+            this.botonEliminar.Click += new System.EventHandler(this.botonEliminar_Click);
             // 
             // botonSalir
             // 
+            this.botonSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.botonSalir.Location = new System.Drawing.Point(319, 511);
             this.botonSalir.Name = "botonSalir";
             this.botonSalir.Size = new System.Drawing.Size(89, 42);
@@ -496,7 +499,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.sexo);
-            this.Controls.Add(this.Teléfono);
+            this.Controls.Add(this.telefono);
             this.Controls.Add(this.colonia);
             this.Controls.Add(this.direccion);
             this.Controls.Add(this.paterno);
@@ -541,7 +544,7 @@
         private System.Windows.Forms.TextBox paterno;
         private System.Windows.Forms.TextBox direccion;
         private System.Windows.Forms.TextBox colonia;
-        private System.Windows.Forms.TextBox Teléfono;
+        private System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.TextBox sexo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label9;
