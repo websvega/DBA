@@ -106,7 +106,7 @@
             this.txt_Box_Nom.Location = new System.Drawing.Point(196, 61);
             this.txt_Box_Nom.Name = "txt_Box_Nom";
             this.txt_Box_Nom.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Nom.TabIndex = 1;
+            this.txt_Box_Nom.TabIndex = 0;
             this.txt_Box_Nom.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
@@ -142,7 +142,7 @@
             this.txt_Box_Apelli_Mat.Location = new System.Drawing.Point(196, 147);
             this.txt_Box_Apelli_Mat.Name = "txt_Box_Apelli_Mat";
             this.txt_Box_Apelli_Mat.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Apelli_Mat.TabIndex = 1;
+            this.txt_Box_Apelli_Mat.TabIndex = 2;
             this.txt_Box_Apelli_Mat.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
@@ -160,7 +160,7 @@
             this.txt_Box_Dir.Location = new System.Drawing.Point(196, 190);
             this.txt_Box_Dir.Name = "txt_Box_Dir";
             this.txt_Box_Dir.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Dir.TabIndex = 1;
+            this.txt_Box_Dir.TabIndex = 3;
             this.txt_Box_Dir.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
@@ -178,7 +178,7 @@
             this.txt_Box_Col.Location = new System.Drawing.Point(196, 233);
             this.txt_Box_Col.Name = "txt_Box_Col";
             this.txt_Box_Col.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Col.TabIndex = 1;
+            this.txt_Box_Col.TabIndex = 4;
             this.txt_Box_Col.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
@@ -196,7 +196,7 @@
             this.txt_Box_Tel.Location = new System.Drawing.Point(196, 276);
             this.txt_Box_Tel.Name = "txt_Box_Tel";
             this.txt_Box_Tel.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Tel.TabIndex = 1;
+            this.txt_Box_Tel.TabIndex = 5;
             this.txt_Box_Tel.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label8
@@ -225,7 +225,7 @@
             this.numericUpDown_Pac_Limit.Location = new System.Drawing.Point(198, 388);
             this.numericUpDown_Pac_Limit.Name = "numericUpDown_Pac_Limit";
             this.numericUpDown_Pac_Limit.Size = new System.Drawing.Size(38, 31);
-            this.numericUpDown_Pac_Limit.TabIndex = 2;
+            this.numericUpDown_Pac_Limit.TabIndex = 9;
             // 
             // label10
             // 
@@ -243,7 +243,7 @@
             this.numericUpDown_Sig_Pac.Location = new System.Drawing.Point(198, 433);
             this.numericUpDown_Sig_Pac.Name = "numericUpDown_Sig_Pac";
             this.numericUpDown_Sig_Pac.Size = new System.Drawing.Size(38, 31);
-            this.numericUpDown_Sig_Pac.TabIndex = 2;
+            this.numericUpDown_Sig_Pac.TabIndex = 10;
             // 
             // label11
             // 
@@ -261,7 +261,7 @@
             this.dateTime_Birth_Date.Location = new System.Drawing.Point(198, 478);
             this.dateTime_Birth_Date.Name = "dateTime_Birth_Date";
             this.dateTime_Birth_Date.Size = new System.Drawing.Size(200, 31);
-            this.dateTime_Birth_Date.TabIndex = 3;
+            this.dateTime_Birth_Date.TabIndex = 11;
             // 
             // btt_Alta_Psic
             // 
@@ -269,7 +269,7 @@
             this.btt_Alta_Psic.Location = new System.Drawing.Point(15, 558);
             this.btt_Alta_Psic.Name = "btt_Alta_Psic";
             this.btt_Alta_Psic.Size = new System.Drawing.Size(138, 35);
-            this.btt_Alta_Psic.TabIndex = 5;
+            this.btt_Alta_Psic.TabIndex = 12;
             this.btt_Alta_Psic.Text = "Alta";
             this.btt_Alta_Psic.UseVisualStyleBackColor = true;
             this.btt_Alta_Psic.Click += new System.EventHandler(this.btt_Alta_Psic_Click);
@@ -280,7 +280,7 @@
             this.button1.Location = new System.Drawing.Point(332, 558);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 35);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Baja";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -290,7 +290,7 @@
             this.button2.Location = new System.Drawing.Point(667, 558);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 35);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 14;
             this.button2.Text = "Modificaciones";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -300,7 +300,7 @@
             this.button3.Location = new System.Drawing.Point(1002, 558);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 35);
-            this.button3.TabIndex = 5;
+            this.button3.TabIndex = 15;
             this.button3.Text = "Salir";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -321,7 +321,7 @@
             this.radioButt_Male.Location = new System.Drawing.Point(196, 349);
             this.radioButt_Male.Name = "radioButt_Male";
             this.radioButt_Male.Size = new System.Drawing.Size(91, 27);
-            this.radioButt_Male.TabIndex = 6;
+            this.radioButt_Male.TabIndex = 7;
             this.radioButt_Male.TabStop = true;
             this.radioButt_Male.Text = "Hombre";
             this.radioButt_Male.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@
             this.radioButt_Female.Location = new System.Drawing.Point(305, 349);
             this.radioButt_Female.Name = "radioButt_Female";
             this.radioButt_Female.Size = new System.Drawing.Size(75, 27);
-            this.radioButt_Female.TabIndex = 6;
+            this.radioButt_Female.TabIndex = 8;
             this.radioButt_Female.TabStop = true;
             this.radioButt_Female.Text = "Mujer";
             this.radioButt_Female.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(635, 394);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.TabIndex = 16;
             // 
             // psicologoBindingSource
             // 
@@ -483,7 +483,7 @@
             this.txt_Box_Working_Days.Location = new System.Drawing.Point(196, 314);
             this.txt_Box_Working_Days.Name = "txt_Box_Working_Days";
             this.txt_Box_Working_Days.Size = new System.Drawing.Size(281, 20);
-            this.txt_Box_Working_Days.TabIndex = 1;
+            this.txt_Box_Working_Days.TabIndex = 6;
             this.txt_Box_Working_Days.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form_Psicologo
