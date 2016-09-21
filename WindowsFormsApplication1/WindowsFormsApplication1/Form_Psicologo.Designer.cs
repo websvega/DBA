@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Box_Nom = new System.Windows.Forms.TextBox();
@@ -43,18 +44,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_Box_Tel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_Wor_Days = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_Pac_Limit = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_Sig_Pac = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTime_Birth_Date = new System.Windows.Forms.DateTimePicker();
             this.btt_Alta_Psic = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.radioButt_Male = new System.Windows.Forms.RadioButton();
+            this.radioButt_Female = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.psicologoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marillac_DataSet = new WindowsFormsApplication1.MarillacDataSet();
+            this.psicologoTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.PsicologoTableAdapter();
             this.PK_psicologo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido_Pat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,10 +72,13 @@
             this.limit_pac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sign_Pac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Wor_Days)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Pac_Limit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sig_Pac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.psicologoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marillac_DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -199,63 +209,136 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Dias Laborales:";
             // 
-            // numericUpDown1
+            // numericUpDown_Wor_Days
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(185, 319);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown_Wor_Days.Location = new System.Drawing.Point(185, 319);
+            this.numericUpDown_Wor_Days.Name = "numericUpDown_Wor_Days";
+            this.numericUpDown_Wor_Days.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown_Wor_Days.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 357);
+            this.label9.Location = new System.Drawing.Point(18, 390);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(161, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Limite de Pacientes:";
             // 
-            // numericUpDown2
+            // numericUpDown_Pac_Limit
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(185, 362);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDown_Pac_Limit.Location = new System.Drawing.Point(185, 395);
+            this.numericUpDown_Pac_Limit.Name = "numericUpDown_Pac_Limit";
+            this.numericUpDown_Pac_Limit.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown_Pac_Limit.TabIndex = 2;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 400);
+            this.label10.Location = new System.Drawing.Point(18, 433);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(164, 23);
             this.label10.TabIndex = 0;
             this.label10.Text = "Pacientes: Inscritos:";
             // 
-            // numericUpDown3
+            // numericUpDown_Sig_Pac
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(185, 405);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown3.TabIndex = 2;
+            this.numericUpDown_Sig_Pac.Location = new System.Drawing.Point(185, 438);
+            this.numericUpDown_Sig_Pac.Name = "numericUpDown_Sig_Pac";
+            this.numericUpDown_Sig_Pac.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown_Sig_Pac.TabIndex = 2;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 445);
+            this.label11.Location = new System.Drawing.Point(18, 478);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(164, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Pacientes: Inscritos:";
             // 
-            // dateTimePicker1
+            // dateTime_Birth_Date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(185, 448);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTime_Birth_Date.Location = new System.Drawing.Point(185, 481);
+            this.dateTime_Birth_Date.Name = "dateTime_Birth_Date";
+            this.dateTime_Birth_Date.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_Birth_Date.TabIndex = 3;
+            // 
+            // btt_Alta_Psic
+            // 
+            this.btt_Alta_Psic.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btt_Alta_Psic.Location = new System.Drawing.Point(15, 558);
+            this.btt_Alta_Psic.Name = "btt_Alta_Psic";
+            this.btt_Alta_Psic.Size = new System.Drawing.Size(138, 35);
+            this.btt_Alta_Psic.TabIndex = 5;
+            this.btt_Alta_Psic.Text = "Alta";
+            this.btt_Alta_Psic.UseVisualStyleBackColor = true;
+            this.btt_Alta_Psic.Click += new System.EventHandler(this.btt_Alta_Psic_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(332, 558);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Baja";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(667, 558);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 35);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Modificaciones";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1002, 558);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(156, 35);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Salir";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(20, 349);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 23);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Sexo:";
+            // 
+            // radioButt_Male
+            // 
+            this.radioButt_Male.AutoSize = true;
+            this.radioButt_Male.Location = new System.Drawing.Point(185, 354);
+            this.radioButt_Male.Name = "radioButt_Male";
+            this.radioButt_Male.Size = new System.Drawing.Size(62, 17);
+            this.radioButt_Male.TabIndex = 6;
+            this.radioButt_Male.TabStop = true;
+            this.radioButt_Male.Text = "Hombre";
+            this.radioButt_Male.UseVisualStyleBackColor = true;
+            // 
+            // radioButt_Female
+            // 
+            this.radioButt_Female.AutoSize = true;
+            this.radioButt_Female.Location = new System.Drawing.Point(294, 354);
+            this.radioButt_Female.Name = "radioButt_Female";
+            this.radioButt_Female.Size = new System.Drawing.Size(51, 17);
+            this.radioButt_Female.TabIndex = 6;
+            this.radioButt_Female.TabStop = true;
+            this.radioButt_Female.Text = "Mujer";
+            this.radioButt_Female.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -263,6 +346,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -275,57 +359,35 @@
             this.work_days,
             this.limit_pac,
             this.sign_Pac,
-            this.birth_Day});
-            this.dataGridView1.Location = new System.Drawing.Point(494, 57);
+            this.birth_Day,
+            this.edadDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.psicologoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(503, 57);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(635, 394);
             this.dataGridView1.TabIndex = 4;
             // 
-            // btt_Alta_Psic
+            // psicologoBindingSource
             // 
-            this.btt_Alta_Psic.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_Alta_Psic.Location = new System.Drawing.Point(22, 523);
-            this.btt_Alta_Psic.Name = "btt_Alta_Psic";
-            this.btt_Alta_Psic.Size = new System.Drawing.Size(138, 35);
-            this.btt_Alta_Psic.TabIndex = 5;
-            this.btt_Alta_Psic.Text = "Alta";
-            this.btt_Alta_Psic.UseVisualStyleBackColor = true;
+            this.psicologoBindingSource.DataMember = "Psicologo";
+            this.psicologoBindingSource.DataSource = this.marillac_DataSet;
             // 
-            // button1
+            // marillac_DataSet
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(339, 523);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 35);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Baja";
-            this.button1.UseVisualStyleBackColor = true;
+            this.marillac_DataSet.DataSetName = "Marillac_DataSet";
+            this.marillac_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button2
+            // psicologoTableAdapter
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(674, 523);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 35);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modificaciones";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1009, 523);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 35);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.psicologoTableAdapter.ClearBeforeFill = true;
             // 
             // PK_psicologo
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PK_psicologo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PK_psicologo.DataPropertyName = "idPsicologo";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PK_psicologo.DefaultCellStyle = dataGridViewCellStyle3;
             this.PK_psicologo.HeaderText = "Clave Psicologo";
             this.PK_psicologo.Name = "PK_psicologo";
             this.PK_psicologo.ReadOnly = true;
@@ -333,6 +395,7 @@
             // 
             // nombre
             // 
+            this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
@@ -340,6 +403,7 @@
             // 
             // apellido_Pat
             // 
+            this.apellido_Pat.DataPropertyName = "paterno";
             this.apellido_Pat.HeaderText = "Apeellido Paterno";
             this.apellido_Pat.Name = "apellido_Pat";
             this.apellido_Pat.ReadOnly = true;
@@ -347,6 +411,7 @@
             // 
             // Apellido_Mat
             // 
+            this.Apellido_Mat.DataPropertyName = "materno";
             this.Apellido_Mat.HeaderText = "Apellido Materno";
             this.Apellido_Mat.Name = "Apellido_Mat";
             this.Apellido_Mat.ReadOnly = true;
@@ -354,6 +419,7 @@
             // 
             // dir
             // 
+            this.dir.DataPropertyName = "direccion";
             this.dir.HeaderText = "Direccion";
             this.dir.Name = "dir";
             this.dir.ReadOnly = true;
@@ -361,6 +427,7 @@
             // 
             // tel
             // 
+            this.tel.DataPropertyName = "telefono";
             this.tel.HeaderText = "Telefono";
             this.tel.Name = "tel";
             this.tel.ReadOnly = true;
@@ -368,6 +435,7 @@
             // 
             // work_days
             // 
+            this.work_days.DataPropertyName = "diasLaborales";
             this.work_days.HeaderText = "Dias Laborales";
             this.work_days.Name = "work_days";
             this.work_days.ReadOnly = true;
@@ -375,6 +443,7 @@
             // 
             // limit_pac
             // 
+            this.limit_pac.DataPropertyName = "limitePacientes";
             this.limit_pac.HeaderText = "Limite de Pacientes";
             this.limit_pac.Name = "limit_pac";
             this.limit_pac.ReadOnly = true;
@@ -382,6 +451,7 @@
             // 
             // sign_Pac
             // 
+            this.sign_Pac.DataPropertyName = "pacientesInscritos";
             this.sign_Pac.HeaderText = "Pacientes Inscritos";
             this.sign_Pac.Name = "sign_Pac";
             this.sign_Pac.ReadOnly = true;
@@ -389,30 +459,41 @@
             // 
             // birth_Day
             // 
+            this.birth_Day.DataPropertyName = "fechaNacimiento";
             this.birth_Day.HeaderText = "Fecha de Nacimiento";
             this.birth_Day.Name = "birth_Day";
             this.birth_Day.ReadOnly = true;
             this.birth_Day.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form_Psicologo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 570);
+            this.ClientSize = new System.Drawing.Size(1177, 618);
+            this.Controls.Add(this.radioButt_Female);
+            this.Controls.Add(this.radioButt_Male);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btt_Alta_Psic);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.dateTime_Birth_Date);
+            this.Controls.Add(this.numericUpDown_Sig_Pac);
+            this.Controls.Add(this.numericUpDown_Pac_Limit);
+            this.Controls.Add(this.numericUpDown_Wor_Days);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_Box_Tel);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_Box_Col);
             this.Controls.Add(this.label6);
@@ -429,10 +510,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Apellido Paterno:";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Psicologo_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.Load += new System.EventHandler(this.Form_Psicologo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Wor_Days)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Pac_Limit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sig_Pac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.psicologoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marillac_DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,18 +538,24 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_Box_Tel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Wor_Days;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Pac_Limit;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Sig_Pac;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTime_Birth_Date;
         private System.Windows.Forms.Button btt_Alta_Psic;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton radioButt_Male;
+        private System.Windows.Forms.RadioButton radioButt_Female;
+        private MarillacDataSet marillac_DataSet;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource psicologoBindingSource;
+        private MarillacDataSetTableAdapters.PsicologoTableAdapter psicologoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK_psicologo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_Pat;
@@ -476,5 +566,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn limit_pac;
         private System.Windows.Forms.DataGridViewTextBoxColumn sign_Pac;
         private System.Windows.Forms.DataGridViewTextBoxColumn birth_Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
     }
 }

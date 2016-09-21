@@ -39,7 +39,11 @@ namespace WindowsFormsApplication1
 
         private void btt_Psicologos_Click(object sender, EventArgs e)
         {
-            this.form_Psicologo = new Form_Psicologo(this);
+            this.form_Psicologo = new Form_Psicologo
+                (
+                   this,
+                   @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac; Integrated Security=True"
+                );
             this.Hide();
             this.form_Psicologo.Show();
         }
