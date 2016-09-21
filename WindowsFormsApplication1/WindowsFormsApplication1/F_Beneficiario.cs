@@ -25,11 +25,11 @@ namespace WindowsFormsApplication1
             this.main_Form = m_Form;
 
             con = new SqlConnection();
-            connectionString = @"Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
+            connectionString = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
             con.ConnectionString = connectionString;
             adapter = new SqlDataAdapter();
 
-            dateTimePicker1.CustomFormat = "dd-MMMM-yyyy";
+            dateTimePicker1.CustomFormat = "dd-MMMM-yyyy"; 
         }
 
         private void form_is_Closing(object sender, FormClosingEventArgs e)
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1
             try
             {
                 con.Open();
-                string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('"+nombre.Text+"', '"+paterno.Text+"', '"+materno.Text+"', '"+direccion.Text+"', '"+colonia.Text+"',"+telefono.Text+", '"+sexo.Text+"', '"+dateTimePicker1.Value.Day+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Year+"')";
+                string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('"+nombre.Text+"', '"+paterno.Text+"', '"+materno.Text+"', '"+direccion.Text+"', '"+colonia.Text+"',"+telefono.Text+", '"+sexo.Text+"', '"+dateTimePicker1.Value.Year+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Day+"')";
                 adapter.InsertCommand = new SqlCommand(query, con);
                 adapter.InsertCommand.ExecuteNonQuery();
                 limpiarTextBox();
@@ -137,7 +137,7 @@ namespace WindowsFormsApplication1
                 try
                 {
                     con.Open();
-                    string query = "UPDATE Persona.Beneficiario SET nombre='"+nombre.Text+"', paterno='"+paterno.Text+"', materno='"+materno.Text+"', direccion='"+direccion.Text+"', colonia='"+colonia.Text+"', telefono="+telefono.Text+", sexo='"+sexo.Text+ "', fechaNacimiento='" + dateTimePicker1.Value.Day + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Year + "' WHERE idBeneficiario=" + idModificar;
+                    string query = "UPDATE Persona.Beneficiario SET nombre='"+nombre.Text+"', paterno='"+paterno.Text+"', materno='"+materno.Text+"', direccion='"+direccion.Text+"', colonia='"+colonia.Text+"', telefono="+telefono.Text+", sexo='"+sexo.Text+ "', fechaNacimiento='" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "' WHERE idBeneficiario=" + idModificar;
                     adapter.InsertCommand=new SqlCommand(query,con);
                     adapter.InsertCommand.ExecuteNonQuery();
                     con.Close();

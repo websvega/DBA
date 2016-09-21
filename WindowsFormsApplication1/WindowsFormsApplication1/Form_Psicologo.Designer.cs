@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Box_Nom = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_Box_Tel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown_Wor_Days = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.numericUpDown_Pac_Limit = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.sign_Pac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Wor_Days)).BeginInit();
+            this.txt_Box_Working_Days = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Pac_Limit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sig_Pac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,7 +103,7 @@
             // 
             // txt_Box_Nom
             // 
-            this.txt_Box_Nom.Location = new System.Drawing.Point(185, 61);
+            this.txt_Box_Nom.Location = new System.Drawing.Point(196, 61);
             this.txt_Box_Nom.Name = "txt_Box_Nom";
             this.txt_Box_Nom.Size = new System.Drawing.Size(281, 20);
             this.txt_Box_Nom.TabIndex = 1;
@@ -121,7 +121,7 @@
             // 
             // txt_Apellido_Pat
             // 
-            this.txt_Apellido_Pat.Location = new System.Drawing.Point(185, 104);
+            this.txt_Apellido_Pat.Location = new System.Drawing.Point(196, 104);
             this.txt_Apellido_Pat.Name = "txt_Apellido_Pat";
             this.txt_Apellido_Pat.Size = new System.Drawing.Size(281, 20);
             this.txt_Apellido_Pat.TabIndex = 1;
@@ -139,7 +139,7 @@
             // 
             // txt_Box_Apelli_Mat
             // 
-            this.txt_Box_Apelli_Mat.Location = new System.Drawing.Point(185, 147);
+            this.txt_Box_Apelli_Mat.Location = new System.Drawing.Point(196, 147);
             this.txt_Box_Apelli_Mat.Name = "txt_Box_Apelli_Mat";
             this.txt_Box_Apelli_Mat.Size = new System.Drawing.Size(281, 20);
             this.txt_Box_Apelli_Mat.TabIndex = 1;
@@ -157,7 +157,7 @@
             // 
             // txt_Box_Dir
             // 
-            this.txt_Box_Dir.Location = new System.Drawing.Point(185, 190);
+            this.txt_Box_Dir.Location = new System.Drawing.Point(196, 190);
             this.txt_Box_Dir.Name = "txt_Box_Dir";
             this.txt_Box_Dir.Size = new System.Drawing.Size(281, 20);
             this.txt_Box_Dir.TabIndex = 1;
@@ -175,7 +175,7 @@
             // 
             // txt_Box_Col
             // 
-            this.txt_Box_Col.Location = new System.Drawing.Point(185, 233);
+            this.txt_Box_Col.Location = new System.Drawing.Point(196, 233);
             this.txt_Box_Col.Name = "txt_Box_Col";
             this.txt_Box_Col.Size = new System.Drawing.Size(281, 20);
             this.txt_Box_Col.TabIndex = 1;
@@ -193,7 +193,7 @@
             // 
             // txt_Box_Tel
             // 
-            this.txt_Box_Tel.Location = new System.Drawing.Point(185, 276);
+            this.txt_Box_Tel.Location = new System.Drawing.Point(196, 276);
             this.txt_Box_Tel.Name = "txt_Box_Tel";
             this.txt_Box_Tel.Size = new System.Drawing.Size(281, 20);
             this.txt_Box_Tel.TabIndex = 1;
@@ -209,13 +209,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Dias Laborales:";
             // 
-            // numericUpDown_Wor_Days
-            // 
-            this.numericUpDown_Wor_Days.Location = new System.Drawing.Point(185, 319);
-            this.numericUpDown_Wor_Days.Name = "numericUpDown_Wor_Days";
-            this.numericUpDown_Wor_Days.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown_Wor_Days.TabIndex = 2;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -228,9 +221,10 @@
             // 
             // numericUpDown_Pac_Limit
             // 
-            this.numericUpDown_Pac_Limit.Location = new System.Drawing.Point(185, 395);
+            this.numericUpDown_Pac_Limit.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_Pac_Limit.Location = new System.Drawing.Point(198, 388);
             this.numericUpDown_Pac_Limit.Name = "numericUpDown_Pac_Limit";
-            this.numericUpDown_Pac_Limit.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown_Pac_Limit.Size = new System.Drawing.Size(38, 31);
             this.numericUpDown_Pac_Limit.TabIndex = 2;
             // 
             // label10
@@ -245,9 +239,10 @@
             // 
             // numericUpDown_Sig_Pac
             // 
-            this.numericUpDown_Sig_Pac.Location = new System.Drawing.Point(185, 438);
+            this.numericUpDown_Sig_Pac.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_Sig_Pac.Location = new System.Drawing.Point(198, 433);
             this.numericUpDown_Sig_Pac.Name = "numericUpDown_Sig_Pac";
-            this.numericUpDown_Sig_Pac.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown_Sig_Pac.Size = new System.Drawing.Size(38, 31);
             this.numericUpDown_Sig_Pac.TabIndex = 2;
             // 
             // label11
@@ -256,15 +251,16 @@
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(18, 478);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(164, 23);
+            this.label11.Size = new System.Drawing.Size(174, 23);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Pacientes: Inscritos:";
+            this.label11.Text = "Fecha de Nacimiento:";
             // 
             // dateTime_Birth_Date
             // 
-            this.dateTime_Birth_Date.Location = new System.Drawing.Point(185, 481);
+            this.dateTime_Birth_Date.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime_Birth_Date.Location = new System.Drawing.Point(198, 478);
             this.dateTime_Birth_Date.Name = "dateTime_Birth_Date";
-            this.dateTime_Birth_Date.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_Birth_Date.Size = new System.Drawing.Size(200, 31);
             this.dateTime_Birth_Date.TabIndex = 3;
             // 
             // btt_Alta_Psic
@@ -321,9 +317,10 @@
             // radioButt_Male
             // 
             this.radioButt_Male.AutoSize = true;
-            this.radioButt_Male.Location = new System.Drawing.Point(185, 354);
+            this.radioButt_Male.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButt_Male.Location = new System.Drawing.Point(196, 349);
             this.radioButt_Male.Name = "radioButt_Male";
-            this.radioButt_Male.Size = new System.Drawing.Size(62, 17);
+            this.radioButt_Male.Size = new System.Drawing.Size(91, 27);
             this.radioButt_Male.TabIndex = 6;
             this.radioButt_Male.TabStop = true;
             this.radioButt_Male.Text = "Hombre";
@@ -332,9 +329,10 @@
             // radioButt_Female
             // 
             this.radioButt_Female.AutoSize = true;
-            this.radioButt_Female.Location = new System.Drawing.Point(294, 354);
+            this.radioButt_Female.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButt_Female.Location = new System.Drawing.Point(305, 349);
             this.radioButt_Female.Name = "radioButt_Female";
-            this.radioButt_Female.Size = new System.Drawing.Size(51, 17);
+            this.radioButt_Female.Size = new System.Drawing.Size(75, 27);
             this.radioButt_Female.TabIndex = 6;
             this.radioButt_Female.TabStop = true;
             this.radioButt_Female.Text = "Mujer";
@@ -348,6 +346,14 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PK_psicologo,
@@ -386,8 +392,8 @@
             // PK_psicologo
             // 
             this.PK_psicologo.DataPropertyName = "idPsicologo";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PK_psicologo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PK_psicologo.DefaultCellStyle = dataGridViewCellStyle2;
             this.PK_psicologo.HeaderText = "Clave Psicologo";
             this.PK_psicologo.Name = "PK_psicologo";
             this.PK_psicologo.ReadOnly = true;
@@ -472,6 +478,14 @@
             this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
             this.edadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // txt_Box_Working_Days
+            // 
+            this.txt_Box_Working_Days.Location = new System.Drawing.Point(196, 314);
+            this.txt_Box_Working_Days.Name = "txt_Box_Working_Days";
+            this.txt_Box_Working_Days.Size = new System.Drawing.Size(281, 20);
+            this.txt_Box_Working_Days.TabIndex = 1;
+            this.txt_Box_Working_Days.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form_Psicologo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,10 +501,10 @@
             this.Controls.Add(this.dateTime_Birth_Date);
             this.Controls.Add(this.numericUpDown_Sig_Pac);
             this.Controls.Add(this.numericUpDown_Pac_Limit);
-            this.Controls.Add(this.numericUpDown_Wor_Days);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.txt_Box_Working_Days);
             this.Controls.Add(this.txt_Box_Tel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label12);
@@ -511,7 +525,6 @@
             this.Text = "Apellido Paterno:";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Psicologo_FormClosing);
             this.Load += new System.EventHandler(this.Form_Psicologo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Wor_Days)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Pac_Limit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sig_Pac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -538,7 +551,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_Box_Tel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown_Wor_Days;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown numericUpDown_Pac_Limit;
         private System.Windows.Forms.Label label10;
@@ -567,5 +579,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sign_Pac;
         private System.Windows.Forms.DataGridViewTextBoxColumn birth_Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txt_Box_Working_Days;
     }
 }

@@ -84,16 +84,16 @@ namespace WindowsFormsApplication1
             this.adapter = new SqlDataAdapter();
             this.dmL = new string[,]
             {
-                { "INSERT INTO"}
+                { "INSERT INTO "}//Row = 0 Col = 0
                 ,
-                { "VALUES" }
+                { "VALUES" } //Row = 1 Col = 0
             };
 
             this.tables = new string[,]
             {
-                { "Persona.Psicologo" }
+                { "Persona.Psicologo" }//Row = 0 Col = 0
                 ,
-                {"(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento)" }
+                {"(nombre, paterno, materno, direccion, colonia, telefono, diasLaborales, sexo, limitePacientes, fechaNacimiento)" }
             };
         }
 

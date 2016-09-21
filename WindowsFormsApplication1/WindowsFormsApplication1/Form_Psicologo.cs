@@ -42,33 +42,33 @@ namespace WindowsFormsApplication1
                 +
                 this.sql.Tables[0, 0]
                 +
-                this.sql.Tables[0, 1]
+                this.sql.Tables[1, 0]
                 +
-                this.sql.DML[0, 1]
+                this.sql.DML[1, 0]
                 + "('" +
-                this.txt_Box_Nom
+                this.txt_Box_Nom.Text
                 + "', '" +
-                this.txt_Apellido_Pat
+                this.txt_Apellido_Pat.Text
                 + "', '" +
-                this.txt_Box_Apelli_Mat
+                this.txt_Box_Apelli_Mat.Text
                 + "', '" +
-                this.txt_Box_Dir
+                this.txt_Box_Dir.Text
                 + "', '" +
-                this.txt_Box_Col
-                + "', '" +
-                this.txt_Box_Tel
-                + "', '" +
-                this.numericUpDown_Wor_Days.Value
+                this.txt_Box_Col.Text
+                + "', " +
+                this.txt_Box_Tel.Text
+                + ", '" +
+                this.txt_Box_Working_Days.Text
                 + "', '" +
                 this.get_Sexo()
-                + "', '" +
+                + "', " +
                 this.numericUpDown_Pac_Limit.Value
-                + "', '" +
-                this.dateTime_Birth_Date.Value.Day
+                + ", '" +
+                this.dateTime_Birth_Date.Value.Year
                 + "-" +
                 this.dateTime_Birth_Date.Value.Month
                 + "-" +
-                this.dateTime_Birth_Date.Value.Year
+                this.dateTime_Birth_Date.Value.Day
                 + "')"
                 ;
             if (this.sql.execute_Query(query) == true)
