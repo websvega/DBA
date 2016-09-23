@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="beneficiarioPsicologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="beneficiarioPsicologo.Designer.cs">
+      <DependentUpon>beneficiarioPsicologo.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Connection.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="beneficiarioPsicologo.resx">
+      <DependentUpon>beneficiarioPsicologo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MarillacDataSet.xsc">
       <DependentUpon>MarillacDataSet.xsd</DependentUpon>
@@ -142,7 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logoMarillac.png" />
+    <None Include="bin\Debug\Imagenes\logoMarillac.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
