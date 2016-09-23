@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,12 +72,9 @@
             this.botonPagos = new System.Windows.Forms.Button();
             this.botonPsicologo = new System.Windows.Forms.Button();
             this.botonHijos = new System.Windows.Forms.Button();
-            this.cuotaHijoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cuotaHijoTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.CuotaHijoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beneficiarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marillacDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuotaHijoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -286,8 +283,8 @@
             // idBeneficiarioDataGridViewTextBoxColumn
             // 
             this.idBeneficiarioDataGridViewTextBoxColumn.DataPropertyName = "idBeneficiario";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idBeneficiarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idBeneficiarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.idBeneficiarioDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idBeneficiarioDataGridViewTextBoxColumn.Name = "idBeneficiarioDataGridViewTextBoxColumn";
             this.idBeneficiarioDataGridViewTextBoxColumn.ReadOnly = true;
@@ -474,6 +471,7 @@
             this.botonPsicologo.TabIndex = 22;
             this.botonPsicologo.Text = "Psicólogo";
             this.botonPsicologo.UseVisualStyleBackColor = true;
+            this.botonPsicologo.Click += new System.EventHandler(this.botonPsicologo_Click);
             // 
             // botonHijos
             // 
@@ -484,15 +482,6 @@
             this.botonHijos.TabIndex = 23;
             this.botonHijos.Text = "Hijos";
             this.botonHijos.UseVisualStyleBackColor = true;
-            // 
-            // cuotaHijoBindingSource
-            // 
-            this.cuotaHijoBindingSource.DataMember = "CuotaHijo";
-            this.cuotaHijoBindingSource.DataSource = this.marillacDataSet;
-            // 
-            // cuotaHijoTableAdapter
-            // 
-            this.cuotaHijoTableAdapter.ClearBeforeFill = true;
             // 
             // F_Beneficiario
             // 
@@ -529,17 +518,18 @@
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "F_Beneficiario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F_Beneficiario";
+            this.Text = "Beneficiarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_is_Closing);
             this.Load += new System.EventHandler(this.F_Beneficiario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beneficiarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marillacDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuotaHijoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,8 +568,6 @@
         private System.Windows.Forms.Button botonPagos;
         private System.Windows.Forms.Button botonPsicologo;
         private System.Windows.Forms.Button botonHijos;
-        private System.Windows.Forms.BindingSource cuotaHijoBindingSource;
-        private MarillacDataSetTableAdapters.CuotaHijoTableAdapter cuotaHijoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBeneficiarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paternoDataGridViewTextBoxColumn;

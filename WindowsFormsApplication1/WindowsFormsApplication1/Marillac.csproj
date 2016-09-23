@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="beneficiarioPsicologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="beneficiarioPsicologo.Designer.cs">
+      <DependentUpon>beneficiarioPsicologo.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_Connection.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="beneficiarioPsicologo.resx">
+      <DependentUpon>beneficiarioPsicologo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

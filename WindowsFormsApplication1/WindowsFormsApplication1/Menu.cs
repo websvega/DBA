@@ -24,26 +24,24 @@ namespace WindowsFormsApplication1
         Formulario_Hijo form_hijos;
         Form_Actividades form_Actividades;
         Form_Psicologo form_Psicologo;
+        string cadenaConexion;
 
         public Menu()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            cadenaConexion = @"Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)
         {
-            this.form_Benificiario = new F_Beneficiario(this);
+            this.form_Benificiario = new F_Beneficiario(this, cadenaConexion);
             this.Hide();
             this.form_Benificiario.Show();
         }
 
         private void btt_Psicologos_Click(object sender, EventArgs e)
         {
-            this.form_Psicologo = new Form_Psicologo
-                (
-                   this,
-                   @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac; Integrated Security=True"
-                );
+            this.form_Psicologo = new Form_Psicologo(this, cadenaConexion);
             this.Hide();
             this.form_Psicologo.Show();
         }
