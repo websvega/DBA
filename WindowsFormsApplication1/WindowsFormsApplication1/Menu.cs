@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -65,6 +67,13 @@ namespace WindowsFormsApplication1
             this.form_Actividades = new Form_Actividades(this);
             this.Hide();
             this.form_Actividades.Show();
+        }
+
+        private void Menu_Paint(object sender, PaintEventArgs e)
+        {
+            Bitmap image = new Bitmap(WindowsFormsApplication1.Properties.Resources.logoMarillac);
+            Graphics g = e.Graphics;
+            g.DrawImage(image, new Point((this.Width / 2) - 190, (this.Height/2)-30));
         }
     }
 }
