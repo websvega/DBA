@@ -38,13 +38,13 @@ namespace WindowsFormsApplication1
 
         private void btt_Alta_Psic_Click(object sender, EventArgs e)
         {
-                string query = this.sql.DML[0, 0]
+                string query = this.sql.DML[0]
                 +
                 this.sql.Tables[0, 0]
                 +
                 this.sql.Tables[1, 0]
                 +
-                this.sql.DML[1, 0]
+                this.sql.DML[1]
                 + "('" +
                 this.txt_Box_Nom.Text
                 + "', '" +
@@ -122,6 +122,75 @@ namespace WindowsFormsApplication1
         {
             // TODO: This line of code loads data into the 'marillac_DataSet.Psicologo' table. You can move, or remove it, as needed.
             this.psicologoTableAdapter.Fill(this.marillac_DataSet.Psicologo);
+        }
+
+        private void btt_Modificaciones_Click(object sender, EventArgs e)
+        {            
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                Int64 idModificar;
+                string name_Table = this.sql.Tables_s.Keys.ElementAt(0);
+
+                idModificar = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+
+                string query =
+                    this.sql.DML[2]//UPDATE
+                    +
+                    name_Table//Tabla Piscologos
+                    +
+                    this.sql.DML[3] //SET
+                    +
+                    (this.sql.Tables_s[name_Table])[0]
+                    + " = " +
+                    "'" + this.txt_Box_Nom.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[1]
+                    + " = " +
+                    "'" + this.txt_Apellido_Pat.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[2]
+                    + " = " +
+                    "'" + this.txt_Box_Apelli_Mat.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[3]
+                    + " = " +
+                    "'" + this.txt_Box_Dir.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[4]
+                    + " = " +
+                    "'" + this.txt_Box_Col.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[5]
+                    + " = " +
+                    "'" + this.txt_Box_Tel.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[6]
+                    + " = " +
+                    "'" + this.txt_Box_Working_Days.Text + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[7]
+                    + " = " +
+                    "'" + this.get_Sexo() + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[8]
+                    + " = " +
+                    "'" + this.numericUpDown_Pac_Limit.Value + "'"
+                    + " = " +
+                    (this.sql.Tables_s[name_Table])[9]
+                    + " = " +
+                    ", '" + this.dateTime_Birth_Date.Value.Year 
+                    + "-" +
+                    this.dateTime_Birth_Date.Value.Month
+                     + "-" +
+                     this.dateTime_Birth_Date.Value.Day
+                     + "'"
+                     ;
+
+
+
+
+
+            }
         }
     }
 }
