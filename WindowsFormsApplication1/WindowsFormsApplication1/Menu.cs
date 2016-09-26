@@ -15,9 +15,6 @@ namespace WindowsFormsApplication1
        connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
      *Yeyo
       connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
-        
-       Eber WEBER-PC\SQLEXPRESS 
-         connectionString="Data Source=WEBER-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
         */
 
     public partial class Menu : Form

@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
             this.main_Form = m_Form;
 
             con = new SqlConnection();
-            connectionString = @"Data Source=WEBER-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
+            connectionString = @"Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
             con.ConnectionString = connectionString;
             adapter = new SqlDataAdapter();
         }

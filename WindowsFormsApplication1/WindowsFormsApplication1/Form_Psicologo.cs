@@ -33,9 +33,5 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void btt_Alta_Psic_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
