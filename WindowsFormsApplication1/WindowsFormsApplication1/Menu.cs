@@ -27,7 +27,12 @@ namespace WindowsFormsApplication1
 
         public Menu()
         {
+<<<<<<< HEAD
             InitializeComponent(); 
+=======
+            InitializeComponent();
+            cadenaConexion = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
+>>>>>>> origin/master
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)
