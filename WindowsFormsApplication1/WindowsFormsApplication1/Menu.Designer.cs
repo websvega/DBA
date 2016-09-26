@@ -105,7 +105,6 @@
             this.Name = "Menu";
             this.ShowIcon = false;
             this.Text = "Marillac";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Menu_Paint);
             this.ResumeLayout(false);
 
         }

@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         public Menu()
         {
             InitializeComponent();
-            cadenaConexion = @"Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
+            cadenaConexion = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)
@@ -67,13 +67,6 @@ namespace WindowsFormsApplication1
             this.form_Actividades = new Form_Actividades(this);
             this.Hide();
             this.form_Actividades.Show();
-        }
-
-        private void Menu_Paint(object sender, PaintEventArgs e)
-        {
-            Bitmap image = new Bitmap(WindowsFormsApplication1.Properties.Resources.logoMarillac);
-            Graphics g = e.Graphics;
-            g.DrawImage(image, new Point((this.Width / 2) - 190, (this.Height/2)-30));
         }
     }
 }
