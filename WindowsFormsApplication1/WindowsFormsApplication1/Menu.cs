@@ -13,7 +13,7 @@ using System.IO;
 namespace WindowsFormsApplication1
 {
     /**
-     * VALDES
+     * VALDES 1
        connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
      *Yeyo
       connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
