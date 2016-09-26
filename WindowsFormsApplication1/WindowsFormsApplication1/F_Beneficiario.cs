@@ -53,24 +53,30 @@ namespace WindowsFormsApplication1
 
         private void botonAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (nombre.Text != "" && paterno.Text != "" && direccion.Text != "" && colonia.Text != "" && telefono.Text != "" && sexo.Text != "")
             {
-                con.Open();
-                string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('" + nombre.Text + "', '" + paterno.Text + "', '" + materno.Text + "', '" + direccion.Text + "', '" + colonia.Text + "'," + telefono.Text + ", '" + sexo.Text + "', '" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "')";
-                adapter.InsertCommand = new SqlCommand(query, con);
-                adapter.InsertCommand.ExecuteNonQuery();
-               
-                con.Close();
+                try
+                {
+                    con.Open();
+                    string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('" + nombre.Text + "', '" + paterno.Text + "', '" + materno.Text + "', '" + direccion.Text + "', '" + colonia.Text + "'," + telefono.Text + ", '" + sexo.Text + "', '" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "')";
+                    adapter.InsertCommand = new SqlCommand(query, con);
+                    adapter.InsertCommand.ExecuteNonQuery();
 
-                this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
-                limpiarTextBox();
+                    con.Close();
 
+                    this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+                    limpiarTextBox();
+
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                con.Close();
-                MessageBox.Show(ex.Message.ToString());
-            }
+            else
+                MessageBox.Show("No se pueden dejar campos vacíos");
+           
         }
 
         private void limpiarTextBox()
@@ -175,23 +181,28 @@ namespace WindowsFormsApplication1
             {
                 idModificar = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
 
-                try
+                if (nombre.Text != "" && paterno.Text != "" && direccion.Text != "" && colonia.Text != "" && telefono.Text != "" && sexo.Text != "")
                 {
-                    con.Open();
-                    string query = "UPDATE Persona.Beneficiario SET nombre='"+nombre.Text+"', paterno='"+paterno.Text+"', materno='"+materno.Text+"', direccion='"+direccion.Text+"', colonia='"+colonia.Text+"', telefono="+telefono.Text+", sexo='"+sexo.Text+ "', fechaNacimiento='" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "' WHERE idBeneficiario=" + idModificar;
-                    adapter.InsertCommand=new SqlCommand(query,con);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    con.Close();
+                    try
+                    {
+                        con.Open();
+                        string query = "UPDATE Persona.Beneficiario SET nombre='" + nombre.Text + "', paterno='" + paterno.Text + "', materno='" + materno.Text + "', direccion='" + direccion.Text + "', colonia='" + colonia.Text + "', telefono=" + telefono.Text + ", sexo='" + sexo.Text + "', fechaNacimiento='" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "' WHERE idBeneficiario=" + idModificar;
+                        adapter.InsertCommand = new SqlCommand(query, con);
+                        adapter.InsertCommand.ExecuteNonQuery();
+                        con.Close();
 
-                    this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
-                    limpiarTextBox();
+                        this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+                        limpiarTextBox();
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                        con.Close();
+                    }
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                    con.Close();
-                }
+                else
+                    MessageBox.Show("No se pueden dejar campos vacíos");
             }
         }
 
