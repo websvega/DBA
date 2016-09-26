@@ -15,6 +15,8 @@ namespace WindowsFormsApplication1
        connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
      *Yeyo
       connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
+        Eber
+            cadenaConexion = @"Data Source=WEBER-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
         */
 
     public partial class Menu : Form
@@ -27,12 +29,11 @@ namespace WindowsFormsApplication1
 
         public Menu()
         {
-<<<<<<< HEAD
+
             InitializeComponent(); 
-=======
+
             InitializeComponent();
-            cadenaConexion = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
->>>>>>> origin/master
+
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)

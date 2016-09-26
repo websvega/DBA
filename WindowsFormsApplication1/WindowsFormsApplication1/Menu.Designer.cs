@@ -113,10 +113,9 @@
             this.Controls.Add(this.btt_Beneficiario);
             this.Name = "Form1";
             this.Text = "Marillac";
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-=======
->>>>>>> origin/master
+
             this.ResumeLayout(false);
 
         }
