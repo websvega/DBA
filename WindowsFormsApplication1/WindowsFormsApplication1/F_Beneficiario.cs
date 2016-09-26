@@ -14,22 +14,23 @@ namespace WindowsFormsApplication1
     public partial class F_Beneficiario : Form
     {
         Form main_Form;
+        Form beneficiarioPsicologo;
 
         private SqlConnection con;
         private SqlDataAdapter adapter;
         private string connectionString;
 
-        public F_Beneficiario(Form m_Form)
+        public F_Beneficiario(Form m_Form, string cadena)
         {
             InitializeComponent();
             this.main_Form = m_Form;
 
             con = new SqlConnection();
-            connectionString = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
+            connectionString = cadena;
             con.ConnectionString = connectionString;
             adapter = new SqlDataAdapter();
 
-            dateTimePicker1.CustomFormat = "dd-MMMM-yyyy"; 
+            dateTimePicker1.CustomFormat = "dd-MMMM-yyyy";
         }
 
         private void form_is_Closing(object sender, FormClosingEventArgs e)
@@ -39,10 +40,9 @@ namespace WindowsFormsApplication1
 
         private void F_Beneficiario_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'marillacDataSet.CuotaHijo' Puede moverla o quitarla según sea necesario.
-            this.cuotaHijoTableAdapter.Fill(this.marillacDataSet.CuotaHijo);
             // TODO: esta línea de código carga datos en la tabla 'marillacDataSet.Beneficiario' Puede moverla o quitarla según sea necesario.
             this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+            limpiarTextBox();
         }
 
         private void botonSalir_Click(object sender, EventArgs e)
@@ -56,16 +56,17 @@ namespace WindowsFormsApplication1
             try
             {
                 con.Open();
-                string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('"+nombre.Text+"', '"+paterno.Text+"', '"+materno.Text+"', '"+direccion.Text+"', '"+colonia.Text+"',"+telefono.Text+", '"+sexo.Text+"', '"+dateTimePicker1.Value.Year+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Day+"')";
+                string query = "INSERT INTO Persona.Beneficiario(nombre, paterno, materno, direccion, colonia, telefono, sexo, fechaNacimiento) VALUES('" + nombre.Text + "', '" + paterno.Text + "', '" + materno.Text + "', '" + direccion.Text + "', '" + colonia.Text + "'," + telefono.Text + ", '" + sexo.Text + "', '" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "')";
                 adapter.InsertCommand = new SqlCommand(query, con);
                 adapter.InsertCommand.ExecuteNonQuery();
-                limpiarTextBox();
+               
                 con.Close();
 
                 this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+                limpiarTextBox();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 con.Close();
                 MessageBox.Show(ex.Message.ToString());
@@ -81,31 +82,42 @@ namespace WindowsFormsApplication1
             colonia.Clear();
             telefono.Clear();
             sexo.Clear();
+            psicologo.Clear();
             dateTimePicker1.Value = new DateTime(1990, 01, 01);
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
         {
             Int64 idEliminar;
+            Int64 idPsicologo;
 
-            if(dataGridView1.SelectedRows.Count!=0)
+            if (dataGridView1.SelectedRows.Count != 0)
             {
                 idEliminar = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                try
+                try { idPsicologo = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString()); }
+                catch { idPsicologo = -1; }
+                if(idPsicologo<0)
                 {
-                    con.Open();
-                    string query = "DELETE FROM Persona.Beneficiario WHERE idBeneficiario="+idEliminar;
-                    adapter.InsertCommand = new SqlCommand(query, con);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    con.Close();
+                    try
+                    {
+                        con.Open();
+                        string query = "DELETE FROM Persona.Beneficiario WHERE idBeneficiario=" + idEliminar;
+                        adapter.InsertCommand = new SqlCommand(query, con);
+                        adapter.InsertCommand.ExecuteNonQuery();
+                        con.Close();
 
-                    this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
-                    limpiarTextBox();
+                        this.beneficiarioTableAdapter.Fill(this.marillacDataSet.Beneficiario);
+                        limpiarTextBox();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        MessageBox.Show(ex.Message.ToString());
+                    }
                 }
-                catch(Exception ex)
+                else
                 {
-                    con.Close();
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show("No se puede eliminar a un beneficiario que tenga un psicólogo asignado");
                 }
             }
         }
@@ -117,6 +129,7 @@ namespace WindowsFormsApplication1
                 nombre.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value);
                 paterno.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value);
                 materno.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value);
+                psicologo.Text=cargarPsicologo();
                 direccion.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value);
                 colonia.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value);
                 telefono.Text = Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value);
@@ -124,6 +137,34 @@ namespace WindowsFormsApplication1
                 dateTimePicker1.Value = DateTime.Parse(Convert.ToString(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value));
             }
             catch { }
+        }
+
+        private string cargarPsicologo()
+        {
+            DataTable dt = new DataTable();
+            Int64 idPsicologo;
+            try { idPsicologo = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString()); }
+            catch { idPsicologo = -1; }
+            if(idPsicologo>0)
+            {
+                try
+                {
+                    con.Open();
+                    string query = "SELECT nombre, paterno, materno FROM Persona.Psicologo WHERE idPsicologo=" + idPsicologo;
+                    string nombrePsicologo;
+                    adapter = new SqlDataAdapter(query, con);
+                    adapter.Fill(dt);
+                    nombrePsicologo = dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString() + " " + dt.Rows[0][2].ToString();
+                    con.Close();
+                    return nombrePsicologo;
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message.ToString());
+                }
+            }
+            return "";
         }
 
         private void botonModificar_Click(object sender, EventArgs e)
@@ -151,6 +192,18 @@ namespace WindowsFormsApplication1
                     MessageBox.Show(ex.Message.ToString());
                     con.Close();
                 }
+            }
+        }
+
+        private void botonPsicologo_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count!=0)
+            {
+                Int64 idPsi;
+                try { idPsi = Convert.ToInt64(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString()); }
+                catch { idPsi = -1; }
+                this.beneficiarioPsicologo = new beneficiarioPsicologo(this, connectionString, idPsi);
+                this.beneficiarioPsicologo.ShowDialog();
             }
         }
     }

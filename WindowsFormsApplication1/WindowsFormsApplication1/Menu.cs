@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -15,8 +17,6 @@ namespace WindowsFormsApplication1
        connectionString="Data Source=MAUVALDES\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
      *Yeyo
       connectionString="Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True"
-        Eber
-            cadenaConexion = @"Data Source=WEBER-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
         */
 
     public partial class Menu : Form
@@ -26,30 +26,24 @@ namespace WindowsFormsApplication1
         Formulario_Hijo form_hijos;
         Form_Actividades form_Actividades;
         Form_Psicologo form_Psicologo;
+        string cadenaConexion;
 
         public Menu()
         {
-
-            InitializeComponent(); 
-
             InitializeComponent();
-
+            cadenaConexion = @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac;Integrated Security=True";
         }
 
         private void btt_Beneficiario_Click(object sender, EventArgs e)
         {
-            this.form_Benificiario = new F_Beneficiario(this);
+            this.form_Benificiario = new F_Beneficiario(this, cadenaConexion);
             this.Hide();
             this.form_Benificiario.Show();
         }
 
         private void btt_Psicologos_Click(object sender, EventArgs e)
         {
-            this.form_Psicologo = new Form_Psicologo
-                (
-                   this,
-                   @"Data Source=DEVCRACK-PC\SQLEXPRESS;Initial Catalog=Marillac; Integrated Security=True"
-                );
+            this.form_Psicologo = new Form_Psicologo(this, cadenaConexion);
             this.Hide();
             this.form_Psicologo.Show();
         }
