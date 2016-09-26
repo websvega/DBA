@@ -53,12 +53,15 @@
             this.dateTime_Birth_Date = new System.Windows.Forms.DateTimePicker();
             this.btt_Alta_Psic = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btt_Modificaciones = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.radioButt_Male = new System.Windows.Forms.RadioButton();
             this.radioButt_Female = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.psicologoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marillac_DataSet = new WindowsFormsApplication1.MarillacDataSet();
+            this.psicologoTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.PsicologoTableAdapter();
             this.PK_psicologo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido_Pat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,9 +73,6 @@
             this.sign_Pac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birth_Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.psicologoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marillac_DataSet = new WindowsFormsApplication1.MarillacDataSet();
-            this.psicologoTableAdapter = new WindowsFormsApplication1.MarillacDataSetTableAdapters.PsicologoTableAdapter();
             this.txt_Box_Working_Days = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Pac_Limit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Sig_Pac)).BeginInit();
@@ -284,16 +284,15 @@
             this.button1.Text = "Baja";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btt_Modificaciones
+            // button2
             // 
-            this.btt_Modificaciones.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btt_Modificaciones.Location = new System.Drawing.Point(667, 558);
-            this.btt_Modificaciones.Name = "btt_Modificaciones";
-            this.btt_Modificaciones.Size = new System.Drawing.Size(156, 35);
-            this.btt_Modificaciones.TabIndex = 14;
-            this.btt_Modificaciones.Text = "Modificaciones";
-            this.btt_Modificaciones.UseVisualStyleBackColor = true;
-            this.btt_Modificaciones.Click += new System.EventHandler(this.btt_Modificaciones_Click);
+            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(667, 558);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 35);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Modificaciones";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -373,9 +372,22 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(635, 394);
             this.dataGridView1.TabIndex = 16;
+            // 
+            // psicologoBindingSource
+            // 
+            this.psicologoBindingSource.DataMember = "Psicologo";
+            this.psicologoBindingSource.DataSource = this.marillac_DataSet;
+            // 
+            // marillac_DataSet
+            // 
+            this.marillac_DataSet.DataSetName = "Marillac_DataSet";
+            this.marillac_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // psicologoTableAdapter
+            // 
+            this.psicologoTableAdapter.ClearBeforeFill = true;
             // 
             // PK_psicologo
             // 
@@ -466,20 +478,6 @@
             this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
             this.edadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // psicologoBindingSource
-            // 
-            this.psicologoBindingSource.DataMember = "Psicologo";
-            this.psicologoBindingSource.DataSource = this.marillac_DataSet;
-            // 
-            // marillac_DataSet
-            // 
-            this.marillac_DataSet.DataSetName = "Marillac_DataSet";
-            this.marillac_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // psicologoTableAdapter
-            // 
-            this.psicologoTableAdapter.ClearBeforeFill = true;
-            // 
             // txt_Box_Working_Days
             // 
             this.txt_Box_Working_Days.Location = new System.Drawing.Point(196, 314);
@@ -496,7 +494,7 @@
             this.Controls.Add(this.radioButt_Female);
             this.Controls.Add(this.radioButt_Male);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.btt_Modificaciones);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btt_Alta_Psic);
             this.Controls.Add(this.dataGridView1);
@@ -561,7 +559,7 @@
         private System.Windows.Forms.DateTimePicker dateTime_Birth_Date;
         private System.Windows.Forms.Button btt_Alta_Psic;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btt_Modificaciones;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RadioButton radioButt_Male;

@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.btt_Beneficiario = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btt_Psicologos = new System.Windows.Forms.Button();
             this.btt_Profesores = new System.Windows.Forms.Button();
             this.btt_Actividad = new System.Windows.Forms.Button();
             this.btt_Hijos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btt_Beneficiario
@@ -45,6 +47,14 @@
             this.btt_Beneficiario.Text = "Beneficiarios";
             this.btt_Beneficiario.UseVisualStyleBackColor = true;
             this.btt_Beneficiario.Click += new System.EventHandler(this.btt_Beneficiario_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(253, 131);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(346, 102);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // btt_Psicologos
             // 
@@ -90,7 +100,7 @@
             this.btt_Hijos.UseVisualStyleBackColor = true;
             this.btt_Hijos.Click += new System.EventHandler(this.btt_Hijos_Click);
             // 
-            // Menu
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,13 +109,11 @@
             this.Controls.Add(this.btt_Actividad);
             this.Controls.Add(this.btt_Profesores);
             this.Controls.Add(this.btt_Psicologos);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btt_Beneficiario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.Name = "Menu";
-            this.ShowIcon = false;
+            this.Name = "Form1";
             this.Text = "Marillac";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Menu_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -113,6 +121,7 @@
         #endregion
 
         private System.Windows.Forms.Button btt_Beneficiario;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btt_Psicologos;
         private System.Windows.Forms.Button btt_Profesores;
         private System.Windows.Forms.Button btt_Actividad;

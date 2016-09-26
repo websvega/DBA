@@ -11,10 +11,8 @@ namespace WindowsFormsApplication1
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
-        private string[] dmL;
+        private string[,] dmL;
         private string[,] tables;
-        Dictionary<string, string[]> tables_s;
-
         public SqlConnection Con
         {
             get
@@ -45,7 +43,7 @@ namespace WindowsFormsApplication1
         /// [0,0] INSERT INTO
         /// [0,1] VALUES
         /// </summary>
-        public string[] DML
+        public string[,] DML
         {
             get
             {
@@ -75,18 +73,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public Dictionary<string, string[]> Tables_s
-        {
-            get
-            {
-                return tables_s;
-            }
-
-            set
-            {
-                tables_s = value;
-            }
-        }
 
         /// <summary>
         /// Clase para la conexion y ejecucion de Consultas en SQL
@@ -96,31 +82,19 @@ namespace WindowsFormsApplication1
         {
             this.connection = new SqlConnection(c_string);
             this.adapter = new SqlDataAdapter();
-            this.dmL = new string[]{ "INSERT INTO ","VALUES", "UPDATE ","SET", " WHERE" };
-
+            this.dmL = new string[,]
+            {
+                { "INSERT INTO "}//Row = 0 Col = 0
+                ,
+                { "VALUES" } //Row = 1 Col = 0
+            };
 
             this.tables = new string[,]
             {
-                { " Persona.Psicologo " }//Row = 0 Col = 0
+                { "Persona.Psicologo" }//Row = 0 Col = 0
                 ,
                 {"(nombre, paterno, materno, direccion, colonia, telefono, diasLaborales, sexo, limitePacientes, fechaNacimiento)" }
             };
-            this.tables_s = new Dictionary<string, string[]>();
-            this.tables_s.Add
-                (" Persona.Psicologo ", new string[] 
-                  {
-                      "nombre, ",
-                      "paterno, ",
-                      "materno, ",
-                      "direccion, ",
-                      "colonia, ",
-                      "telefono, ",
-                      "diasLaborales, ",//6
-                      "sexo, ",
-                      "limitePacientes, ",
-"fechaNacimiento"//9
-                   }
-                );
         }
 
         public bool execute_Query(string query)
